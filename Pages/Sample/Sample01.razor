@@ -1,0 +1,27 @@
+﻿@page "/Sample01"
+@using JinjiApp1.Data
+@using JinjiApp1.Models
+
+@inject HrmsoService DbService
+
+<div class="m-3">
+    <span class="m-2">名前：</span><input @bind="Name" type="text" style="width: 160px;" class="form-control m-2">
+    <span class="m-2">年齢：</span><input @bind="Age" type="text" style="width: 160px;" class="form-control m-2">
+    <button @onclick="BtnCommand1_Click" style="width: 100px;" class="btn btn-primary m-2">保存</button>
+    <span style="color: orangered;">@Message</span>
+</div>
+
+<table class="table">
+    @if (Persons != null)
+    {
+        @foreach (Person person in Persons)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Name</td>
+                <td>@person.Age</td>
+            </tr>
+        }
+    }
+</table>
+
