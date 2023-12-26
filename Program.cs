@@ -8,7 +8,7 @@ builder.Services.AddServerSideBlazor();
 
 builder.Services.AddDbContext<HrmsoContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING"));
 });
 builder.Services.AddHttpContextAccessor();
 //サービスを追加したらここに書く
